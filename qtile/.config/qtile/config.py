@@ -83,7 +83,7 @@ keys = [
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "d", lazy.spawn("rofi -show drun -theme Pop-Dark"), desc="Launch rofi"),
+    Key([mod], "d", lazy.spawn("rofi -show drun -normal-window -theme Pop-Dark"), desc="Launch rofi"),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -207,6 +207,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wname': 'branchdialog'},  # gitk
     {'wname': 'pinentry'},  # GPG key password entry
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
+    {'wmclass': 'rofi'},  # ssh-askpass
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
