@@ -38,6 +38,16 @@ import os
 
 mod = "mod4"
 terminal = guess_terminal()
+backgroundColor = '#2e3440'
+foregroundColor = '#d8dee9'
+color1 = '#4c566a'
+color2 = '#5e81ac'
+color3 = '#81a1c1'
+color4 = '#88c0d0'
+color5 = '#8fbcbb'
+color6 = '#bf616a'
+
+colorFocusedGroup = '#b48ead'
 
 @hook.subscribe.startup_once
 def autostart():
@@ -91,8 +101,6 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
-    Key([mod], "r", lazy.spawncmd(),
-        desc="Spawn a command using a prompt widget"),
 ]
 
 groups = [Group(i) for i in "12345678"]
@@ -113,7 +121,7 @@ for i in groups:
     ])
 
 layouts = [
-    layout.MonadTall(margin=4,ratio=0.6, border_focus='#d8dee9'),
+    layout.MonadTall(margin=4,ratio=0.7, border_focus=foregroundColor),
     layout.Max(),
     layout.Stack(num_stacks=2),
     # Try more layouts by unleashing below layouts.
@@ -131,7 +139,9 @@ layouts = [
 widget_defaults = dict(
     font='sans',
     fontsize=12,
-    padding=3,
+    padding=5,
+    background=backgroundColor,
+    foreground=foregroundColor
 )
 extension_defaults = widget_defaults.copy()
 
@@ -139,19 +149,15 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
+                widget.GroupBox(inactive=color2, this_current_screen_border=colorFocusedGroup, this_screen_border=colorFocusedGroup, other_current_screen_border=color2, other_screen_border=color2),
                 widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.Systray(),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-                widget.QuickExit(),
+                widget.CPU(format=' {load_percent}%', background=color2 ,foreground=backgroundColor),
+                widget.Memory(format='{MemUsed}M',background=color3, foreground=backgroundColor),
+                widget.Clock(format='%a %d/%m/%Y | %I:%M %p',background=color4, foreground=backgroundColor),
+                widget.Systray(background=color5,foreground=backgroundColor),
+                widget.TextBox(text=" ",background=color5,width=3),
+                widget.Battery(show_short_text=False, empty_char='', discharge_char='', charge_char= '', hide_threshold=0.99, update_interval=5, foreground=backgroundColor, background=color6),
+                widget.CurrentLayoutIcon(background=color1,foreground=backgroundColor),
             ],
             24,
         ),
@@ -159,17 +165,10 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
+                widget.GroupBox(inactive=color2, this_current_screen_border=colorFocusedGroup, this_screen_border=colorFocusedGroup, other_current_screen_border=color2, other_screen_border=color2),
                 widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
+                widget.Clock(format='%a %d/%m/%Y | %I:%M %p',background=color4, foreground=backgroundColor),
+                widget.CurrentLayoutIcon(background=color1,foreground=backgroundColor),
             ],
             24,
         ),
@@ -207,7 +206,8 @@ floating_layout = layout.Floating(float_rules=[
     {'wname': 'branchdialog'},  # gitk
     {'wname': 'pinentry'},  # GPG key password entry
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
-    {'wmclass': 'rofi'},  # ssh-askpass
+    {'wmclass': 'rofi'},  # rofi
+    {'wmclass': 'zoom'},  # rofi
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
