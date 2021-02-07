@@ -85,7 +85,8 @@ keys = [
        desc='Keyboard focus to monitor 2'
        ),
 
-
+    Key([mod], "f", lazy.window.toggle_floating(), desc="Toggle floating"),
+    
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with

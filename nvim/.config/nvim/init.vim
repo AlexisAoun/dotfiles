@@ -26,14 +26,19 @@ call plug#begin('~/.vim/plugged')
  Plug 'airblade/vim-gitgutter'
 
  Plug 'tpope/vim-fugitive'
+
+ Plug 'jiangmiao/auto-pairs'
+
+
 call plug#end()
 
-
-
+set nohlsearch 
+set hidden
 set noswapfile
 set laststatus=2
 set nowrap
 set smartcase
+set ignorecase
 set incsearch
 set smartindent
 set tabstop=4 softtabstop=4
@@ -45,6 +50,8 @@ set clipboard=unnamedplus
 set undodir=~/.vim/undodir 
 set undofile
 set expandtab
+set scrolloff=10
+
 syntax on
 
 colorscheme gruvbox
