@@ -1,6 +1,6 @@
 # Dotfiles
 
-Configurations for my arch based system 
+Configurations for my linux arch system 
 
 - Alacritty
 - Nvim
