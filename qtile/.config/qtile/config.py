@@ -54,6 +54,8 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.call([home])
 
+
+
 keys = [
     # Switch between windows in current stack pane
     Key([mod], "k", lazy.layout.down(),
@@ -102,6 +104,10 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
+
+    Key([mod], "s", lazy.spawn("./.config/qtile/dual.sh"), desc="set dual screen"),
+    Key([mod], "a", lazy.spawn("./.config/qtile/changeAudioSource.sh"), desc="change audio output source"),
+    Key([mod], "z", lazy.spawn("firefox")),
 ]
 
 groups = [Group(i) for i in "12345678"]

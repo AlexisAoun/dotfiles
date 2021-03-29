@@ -7,6 +7,6 @@ picom -b &
 nitrogen --restore &
 nm-applet & 
 xfce4-power-manager &
-redshift & 
-nextcloud &
+redshift &
+setxkbmap -layout us -variant intl &
 

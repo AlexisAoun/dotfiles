@@ -28,8 +28,12 @@ call plug#begin('~/.vim/plugged')
  Plug 'tpope/vim-fugitive'
 
  Plug 'jiangmiao/auto-pairs'
+ 
+ Plug 'sbdchd/neoformat'
 
+ Plug 'mattn/emmet-vim'
 
+ Plug 'mhinz/vim-startify'
 call plug#end()
 
 set nohlsearch 
