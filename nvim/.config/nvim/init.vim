@@ -1,41 +1,26 @@
-" Plugin management 
+"Plugins 
 
 call plug#begin('~/.vim/plugged')
 
-"a nice autocomlete plugin
- Plug 'neoclide/coc.nvim', {'branch': 'release'} 
-"a nice bottom bar
- Plug 'itchyny/lightline.vim'
-"a nice color scheme 
+"Color scheme 
  Plug 'morhetz/gruvbox'
+"Bottom bar
+ Plug 'vim-airline/vim-airline'
 
- Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
- Plug 'junegunn/fzf.vim'
-
- Plug 'airblade/vim-rooter'
-
- Plug 'scrooloose/nerdtree'
-
- Plug 'Xuyuanp/nerdtree-git-plugin'
-
- Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
- Plug 'ryanoasis/vim-devicons'
-
- Plug 'airblade/vim-gitgutter'
-
- Plug 'tpope/vim-fugitive'
+ Plug 'neovim/nvim-lspconfig'
+ 
+ Plug 'hrsh7th/nvim-compe'
 
  Plug 'jiangmiao/auto-pairs'
  
- Plug 'sbdchd/neoformat'
-
  Plug 'mattn/emmet-vim'
 
  Plug 'mhinz/vim-startify'
+
 call plug#end()
 
+
+"Nvim settings
 set nohlsearch 
 set hidden
 set noswapfile
@@ -55,16 +40,13 @@ set undodir=~/.vim/undodir
 set undofile
 set expandtab
 set scrolloff=10
-
+    
 syntax on
 
+"Color scheme
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ }
-
-
 
 "Setting keybindings
 
@@ -75,7 +57,4 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-source $HOME/.config/nvim/coc_config.vim  
-source $HOME/.config/nvim/fzf_config.vim  
-source $HOME/.config/nvim/nerdtree_config.vim  
 
