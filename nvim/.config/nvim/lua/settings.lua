@@ -16,6 +16,12 @@ o.incsearch = true
 o.relativenumber = true
 o.scrolloff = 10
 
-o.syntax = 'on'
+vim.cmd('set shiftwidth=4')
+vim.cmd('set tabstop=4')
+vim.cmd('set softtabstop=4')
+vim.cmd('set expandtab')
+
+vim.cmd('colorscheme gruvbox')
+vim.cmd("let g:gruvbox_contrast_dark = 'hard'")
 
 
