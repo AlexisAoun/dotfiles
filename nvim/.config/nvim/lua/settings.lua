@@ -15,6 +15,8 @@ o.smartcase = true
 o.incsearch = true
 o.relativenumber = true
 o.scrolloff = 10
+--compe required setting
+o.completeopt = "menuone,noselect"
 
 vim.cmd('set shiftwidth=4')
 vim.cmd('set tabstop=4')
