@@ -5,5 +5,5 @@ require('lsp-config')
 require('python-lsp')
 require('keymapping')
 
-vim.cmd('source fzf-config.vim')
+vim.cmd('source $HOME/.config/nvim/fzf-config.vim')
 
