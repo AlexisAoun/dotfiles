@@ -5,6 +5,7 @@ require('lsp-config')
 require('galaxyline-config')
 require('python-lsp')
 require('keymapping')
+require('autopairs-config')
 
 vim.cmd('source $HOME/.config/nvim/fzf-config.vim')
 

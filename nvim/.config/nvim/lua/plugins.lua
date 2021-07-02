@@ -21,6 +21,10 @@ return require('packer').startup(function()
     use 'airblade/vim-rooter'
 
     use 'tpope/vim-obsession'
+    
+    use 'windwp/nvim-autopairs'
+
+    use 'tpope/vim-fugitive'
 
 end)	
 
