@@ -18,6 +18,8 @@ o.scrolloff = 10
 --compe required setting
 o.completeopt = "menuone,noselect"
 
+vim.cmd("set noswapfile")
+
 vim.cmd('set shiftwidth=4')
 vim.cmd('set tabstop=4')
 vim.cmd('set softtabstop=4')
@@ -28,3 +30,6 @@ vim.cmd("let g:gruvbox_contrast_dark = 'hard'")
 
 vim.cmd("set termguicolors")
 vim.cmd("set background=dark")
+
+-- autocmd for session tracker 
+vim.cmd("autocmd VimEnter * Obsession")

@@ -20,7 +20,7 @@ return require('packer').startup(function()
 
     use 'airblade/vim-rooter'
 
-    use 'kyazdani42/nvim-tree.lua'
+    use 'tpope/vim-obsession'
 
 end)	
 
