@@ -4,9 +4,11 @@ return require('packer').startup(function()
 
     use 'morhetz/gruvbox'
 
-    use 'vim-airline/vim-airline'
+    use 'glepnir/galaxyline.nvim'
 
-    use 'vim-airline/vim-airline-themes'
+    use 'hrsh7th/vim-vsnip'
+
+    use 'kyazdani42/nvim-web-devicons'
 
     use 'neovim/nvim-lspconfig'
 
@@ -17,5 +19,8 @@ return require('packer').startup(function()
     use 'junegunn/fzf.vim'
 
     use 'airblade/vim-rooter'
-end)
-	
+
+    use 'kyazdani42/nvim-tree.lua'
+
+end)	
+
