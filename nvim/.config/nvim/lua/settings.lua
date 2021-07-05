@@ -31,5 +31,3 @@ vim.cmd("let g:gruvbox_contrast_dark = 'hard'")
 vim.cmd("set termguicolors")
 vim.cmd("set background=dark")
 
--- autocmd for session tracker 
-vim.cmd("autocmd VimEnter * Obsession")

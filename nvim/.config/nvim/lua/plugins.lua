@@ -20,13 +20,19 @@ return require('packer').startup(function()
 
     use 'airblade/vim-rooter'
 
-    use 'tpope/vim-obsession'
-    
     use 'windwp/nvim-autopairs'
 
     use 'tpope/vim-fugitive'
 
-    use 'airblade/vim-gitgutter'
+    use {
+      'lewis6991/gitsigns.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim'
+      },
+      config = function()
+        require('gitsigns').setup()
+      end
+    }
 
 end)	
 
