@@ -25,9 +25,6 @@ vim.cmd('set tabstop=4')
 vim.cmd('set softtabstop=4')
 vim.cmd('set expandtab')
 
-vim.cmd('colorscheme gruvbox')
-vim.cmd("let g:gruvbox_contrast_dark = 'hard'")
+vim.cmd('colorscheme gruvbox-material')
 
-vim.cmd("set termguicolors")
-vim.cmd("set background=dark")
-
+vim.cmd('set termguicolors')

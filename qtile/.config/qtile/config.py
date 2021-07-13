@@ -34,26 +34,27 @@ from libqtile import qtile
 from libqtile import hook
 
 import subprocess
-import os 
+import os
 
 mod = "mod4"
 terminal = guess_terminal()
-backgroundColor = '#2e3440'
-foregroundColor = '#d8dee9'
-color1 = '#4c566a'
-color2 = '#5e81ac'
-color3 = '#81a1c1'
-color4 = '#88c0d0'
-color5 = '#8fbcbb'
-color6 = '#bf616a'
+backgroundColor = '#282828'
+foregroundColor = '#dfbf8e'
+red = '#ea6962'
+green = '#a9b665'
+yellow = '#d8a657'
+blue = '#7daea3'
+cyan = '#89b482'
+magenta = "#d3869b"
+white = '#d4be98'
 
 colorFocusedGroup = '#b48ead'
+
 
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.call([home])
-
 
 
 keys = [
@@ -76,19 +77,19 @@ keys = [
     # Swap panes of split stack
     Key([mod, "shift"], "space", lazy.layout.rotate(),
         desc="Swap panes of split stack"),
-    #Switch between monitors 
+    # Switch between monitors
 
     Key([mod], "e",
-       lazy.to_screen(0),
-       desc='Keyboard focus to monitor 1'
-       ),
+        lazy.to_screen(0),
+        desc='Keyboard focus to monitor 1'
+        ),
     Key([mod], "w",
-       lazy.to_screen(1),
-       desc='Keyboard focus to monitor 2'
-       ),
+        lazy.to_screen(1),
+        desc='Keyboard focus to monitor 2'
+        ),
 
     Key([mod], "f", lazy.window.toggle_floating(), desc="Toggle floating"),
-    
+
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -96,7 +97,8 @@ keys = [
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "d", lazy.spawn("rofi -show drun -normal-window -theme Pop-Dark"), desc="Launch rofi"),
+    Key([mod], "d", lazy.spawn(
+        "rofi -show drun -normal-window -theme Pop-Dark"), desc="Launch rofi"),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -106,7 +108,8 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
 
     Key([mod], "s", lazy.spawn("./.config/qtile/dual.sh"), desc="set dual screen"),
-    Key([mod], "a", lazy.spawn("./.config/qtile/changeAudioSource.sh"), desc="change audio output source"),
+    Key([mod], "a", lazy.spawn("./.config/qtile/changeAudioSource.sh"),
+        desc="change audio output source"),
     Key([mod], "z", lazy.spawn("firefox")),
 ]
 
@@ -128,7 +131,7 @@ for i in groups:
     ])
 
 layouts = [
-    layout.MonadTall(margin=4,ratio=0.7, border_focus=foregroundColor),
+    layout.MonadTall(margin=4, ratio=0.7, border_focus=foregroundColor),
     layout.Max(),
     layout.Stack(num_stacks=2),
     # Try more layouts by unleashing below layouts.
@@ -156,15 +159,21 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.GroupBox(inactive=color2, this_current_screen_border=colorFocusedGroup, this_screen_border=colorFocusedGroup, other_current_screen_border=color2, other_screen_border=color2),
+                widget.GroupBox(inactive=foregroundColor, this_current_screen_border=magenta,
+                                this_screen_border=magenta, other_current_screen_border=yellow, other_screen_border=yellow),
                 widget.WindowName(),
-                widget.CPU(format=' {load_percent}%', background=color2 ,foreground=backgroundColor),
-                widget.Memory(format='{MemUsed}M',background=color3, foreground=backgroundColor),
-                widget.Clock(format='%a %d/%m/%Y | %I:%M %p',background=color4, foreground=backgroundColor),
-                widget.Systray(background=color5,foreground=backgroundColor),
-                widget.TextBox(text=" ",background=color5,width=3),
-                widget.Battery(show_short_text=False, empty_char='', discharge_char='', charge_char= '', hide_threshold=0.99, update_interval=5, foreground=backgroundColor, background=color6),
-                widget.CurrentLayoutIcon(background=color1,foreground=backgroundColor),
+                widget.CPU(format=' {load_percent}%',
+                           background=yellow, foreground=backgroundColor),
+                widget.Memory(
+                    format='{MemUsed}M', background=green, foreground=backgroundColor),
+                widget.Clock(format='%a %d/%m/%Y | %I:%M %p',
+                             background=blue, foreground=backgroundColor),
+                widget.Systray(background=magenta, foreground=backgroundColor),
+                widget.TextBox(text=" ", background=magenta, width=3),
+                widget.Battery(show_short_text=False, empty_char='', discharge_char='', charge_char='',
+                               hide_threshold=0.99, update_interval=5, foreground=backgroundColor, background=magenta),
+                widget.CurrentLayoutIcon(
+                    background=red, foreground=backgroundColor),
             ],
             24,
         ),
@@ -172,10 +181,13 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.GroupBox(inactive=color2, this_current_screen_border=colorFocusedGroup, this_screen_border=colorFocusedGroup, other_current_screen_border=color2, other_screen_border=color2),
+                widget.GroupBox(inactive=foregroundColor, this_current_screen_border=colorFocusedGroup,
+                                this_screen_border=colorFocusedGroup, other_current_screen_border=green, other_screen_border=green),
                 widget.WindowName(),
-                widget.Clock(format='%a %d/%m/%Y | %I:%M %p',background=color4, foreground=backgroundColor),
-                widget.CurrentLayoutIcon(background=color1,foreground=backgroundColor),
+                widget.Clock(format='%a %d/%m/%Y | %I:%M %p',
+                             background=blue, foreground=backgroundColor),
+                widget.CurrentLayoutIcon(
+                    background=red, foreground=backgroundColor),
             ],
             24,
         ),
@@ -194,7 +206,7 @@ mouse = [
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
 main = None  # WARNING: this is deprecated and will be removed soon
-follow_mouse_focus = False 
+follow_mouse_focus = False
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[

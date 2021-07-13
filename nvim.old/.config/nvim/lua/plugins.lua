@@ -4,6 +4,8 @@ return require('packer').startup(function()
 
     use 'morhetz/gruvbox'
 
+    use 'sainnhe/gruvbox-material'
+
     use 'glepnir/galaxyline.nvim'
 
     use 'hrsh7th/vim-vsnip'
