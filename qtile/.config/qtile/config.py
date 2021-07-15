@@ -98,7 +98,7 @@ keys = [
         desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "d", lazy.spawn(
-        "rofi -show drun -normal-window -theme Pop-Dark"), desc="Launch rofi"),
+        "rofi -show drun -normal-window -theme gruvbox-dark -icon-theme Gruvbox-Material-Dark -show-icons"), desc="Launch rofi"),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
