@@ -91,11 +91,11 @@ lvim.plugins = {
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { exe = "black" },
-  {
-    exe = "prettier",
-    ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "typescript", "typescriptreact", "javascript" },
-  },
+  -- {
+  --   exe = "prettier",
+  --   ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+  --   filetypes = { "typescript", "typescriptreact", "javascript" },
+  -- },
 }
 
 -- -- set additional linters
