@@ -15,12 +15,13 @@ lvim.colorscheme = "gruvbox-material"
 vim.cmd("set clipboard=unnamedplus")
 vim.cmd("set relativenumber")
 vim.cmd("set nohlsearch")
-
+vim.o.timeoutlen = 1000
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.insert_mode["jj"] = "<ESC>"
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""
 -- edit a default keymapping
