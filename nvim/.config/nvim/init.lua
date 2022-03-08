@@ -6,6 +6,7 @@ require "user.lsp"
 require "user.treesitter"
 require "user.autopairs"
 require "user.telescope"
+require "user.gitsigns"
 
 vim.cmd("colorscheme gruvbox-material")
 
