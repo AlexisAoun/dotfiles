@@ -7,6 +7,7 @@ require "user.treesitter"
 require "user.autopairs"
 require "user.telescope"
 require "user.gitsigns"
+require "user.bufferline"
 
 vim.cmd("colorscheme gruvbox-material")
 
