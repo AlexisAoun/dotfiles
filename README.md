@@ -1,14 +1,15 @@
 # Dotfiles
 
-Configurations for my linux manjaro architect system 
+Configurations for my archlinux system, Gruvbox everywhere
 
 - Alacritty
-- Nvim
-- i3
-- Qtile
-- Polybar
+- Nvim (can be found here : https://github.com/AlexisAoun/nvim-basic-ide)
+- Dwm (can be found here : https://github.com/AlexisAoun/dwm)
+- slstatus (can be found here : https://github.com/AlexisAoun/slstatus)
+- i3 (old)
+- Qtile (old)
+- Polybar (old)
 
-At the moment using Qtile and LunarVim (https://github.com/ChristianChiarulli/LunarVim) with gruvbox-material colorscheme 
-
+Old Screenshot with Qtile
 ![Screenshot](qtile_gruvbox.png "Qtile / Gruvbox")
           
