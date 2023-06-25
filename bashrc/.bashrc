@@ -5,6 +5,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
+alias earphones='bluetoothctl connect 14:3F:A6:56:54:81'
 
 color1="\[$(tput setaf 2)\]"
 color2="\[$(tput setaf 5)\]"
