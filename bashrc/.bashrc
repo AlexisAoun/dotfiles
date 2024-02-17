@@ -16,4 +16,6 @@ export PS1="${color1}\u@\h ${color2}\\w ${color3}\$(git branch 2>/dev/null | gre
 
 set -o vi
 
+bind -x $'"\C-l":clear;'
+
 export PATH=$PATH:~/.local/bin
